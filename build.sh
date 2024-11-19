@@ -11,4 +11,4 @@ sudo chown disk_monitor:disk_monitor /var/log/disk_monitor.log
 set -e
 sudo -u disk_monitor gcc main.c -o disk_monitor
 sudo mv disk_monitor /usr/local/bin
-echo "* * * * * /usr/local/bin/disk_monitor 0.8" | sudo crontab -u disk_monitor -
+echo "* * * * */15 /usr/local/bin/disk_monitor 0.8" | sudo crontab -u disk_monitor -
